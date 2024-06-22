@@ -4,7 +4,7 @@ import (
 	"regexp"
 )
 
-type Artist struct {
+type ArtistInfo struct {
 	Name  string `json:"name"`
 	Mbid  string `json:"mbid"`
 	URL   string `json:"url"`
@@ -45,7 +45,7 @@ type Artist struct {
 // Retrieves information about an artist.
 // The artist can be identified by either its name or its MusicBrainz ID (MBID).
 // Provide a username to also get the user's play count for the artist.
-func (c *Client) GetArtistInfo(artist string, username ...string) (*Artist, error) {
+func (c *Client) GetArtistInfo(artist string, username ...string) (*ArtistInfo, error) {
 	params := map[string]string{
 		"method": "artist.getinfo",
 	}
@@ -61,7 +61,7 @@ func (c *Client) GetArtistInfo(artist string, username ...string) (*Artist, erro
 	}
 
 	var result struct {
-		Artist Artist `json:"artist"`
+		Artist ArtistInfo `json:"artist"`
 	}
 
 	err := c.doRequest("GET", params, &result)

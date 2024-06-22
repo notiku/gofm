@@ -18,7 +18,8 @@ func init() {
 
 func main() {
 	apiKey := os.Getenv("LASTFM_API_KEY")
-	c := gofm.New(apiKey)
+	apiSecret := os.Getenv("LASTFM_API_SECRET")
+	c := gofm.New(apiKey, apiSecret)
 
 	// Get Artist info
 	artist, err := c.GetArtistInfo("Cher", "RJ")

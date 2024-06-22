@@ -26,6 +26,8 @@ Construct a new Last.fm client which can be used to access the Last.fm API funct
 client := gofm.New("YOUR_API_KEY")
 ```
 
+Examples can be found [here](https://github.com/notiku/gofm/examples).
+
 # Documentation
 
 **NOTICE:** This library is still unfinished and in Development. Because of that there may be major changes in the future.

@@ -7,24 +7,27 @@ import (
 	"net/url"
 )
 
-const (
-	Version = "0.0.1"
-)
+const VERSION = "0.0.2"
 
 type Client struct {
 	APIKey     string
+	APISecret  string
 	HTTPClient *http.Client
 }
 
-// Creates a new Client with the given API key.
-func New(apiKey string) *Client {
+// Creates a new Client with the given API credentials.
+func New(apiKey string, apiSecret string) *Client {
 	return &Client{
 		APIKey:     apiKey,
+		APISecret:  apiSecret,
 		HTTPClient: http.DefaultClient,
 	}
 }
 
-const baseURL = "http://ws.audioscrobbler.com/2.0/"
+const (
+	baseURL = "http://ws.audioscrobbler.com/2.0/"
+	authURL = "http://www.last.fm/api/auth/"
+)
 
 // Handles the HTTP requests to the Last.fm API.
 func (c *Client) doRequest(method string, params map[string]string, result interface{}) error {
