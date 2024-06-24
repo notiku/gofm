@@ -31,7 +31,7 @@ Construct a new Last.fm `Network` which can be used to access the [Last.fm API](
 n := gofm.New("YOUR_API_KEY", "YOUR_API_SECRET")
 ```
 
-Examples can be found [here](https://github.com/notiku/gofm/examples/).
+Examples can be found [here](https://github.com/notiku/gofm/tree/main/examples).
 
 # Documentation
 
