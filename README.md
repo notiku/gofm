@@ -1,16 +1,21 @@
 # GoFM
 
-GoFM is a [Go](https://go.dev/) package that provides bindings to the [Last.fm](https://last.fm/) API.
+A [Go](https://go.dev/) interface to [Last.fm](https://last.fm/) API.
 
-# Getting Started
-
-## Installing
+# Installation
 
 This assumes you already have a working Go environment.
 
 `go get` *will always pull the latest tagged release from the master branch.*
 
-```go get github.com/notiku/gofm```
+```bash
+go get github.com/notiku/gofm
+```
+
+# Features
+
+- Simple public interface.
+- ~~Access to all the data exposed by the Last.fm web services~~. (Working on it)
 
 ## Usage
 
@@ -20,13 +25,13 @@ Import the package in your project.
 import "github.com/notiku/gofm"
 ```
 
-Construct a new Last.fm client which can be used to access the Last.fm API functions.
+Construct a new Last.fm `Network` which can be used to access the [Last.fm API](https://last.fm/api).
 
 ```go
-client := gofm.New("YOUR_API_KEY")
+n := gofm.New("YOUR_API_KEY", "YOUR_API_SECRET")
 ```
 
-Examples can be found [here](https://github.com/notiku/gofm/examples).
+Examples can be found [here](https://github.com/notiku/gofm/examples/).
 
 # Documentation
 
